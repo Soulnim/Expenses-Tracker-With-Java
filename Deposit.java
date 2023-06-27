@@ -1,23 +1,23 @@
 public class Deposit extends Transaction
 {
     // test
-    private String depositType, toAccount;
+    private String depositType, destination;
     
     // Why this one don't have void eh?
-    public Deposit(String type, double value, String desc, String depositType, String toAccount) {
+    public Deposit(String type, double value, String desc, String depositType, String destination) {
         super(type, value, desc);
         this.depositType=depositType;
-        this.toAccount=toAccount;
+        this.destination=destination;
     }
     
     public void setDepositType(String set) { this.depositType=set; }
-    public void setToAccount(String toAccount) { this.toAccount=toAccount; }
+    public void setDestination(String destination) { this.destination=destination; }
     
     public String getDepositType() { return depositType; }
-    public String getToAccount() { return toAccount; }
+    public String getDestination() { return destination; }
     
     public String toString() {
         return (super.toString() + "| Deposit Type : " + depositType +
-            "| From Account : " + toAccount);
+            "| From Account : " + destination);
     }
 }
