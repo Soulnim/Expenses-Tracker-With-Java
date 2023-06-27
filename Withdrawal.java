@@ -1,23 +1,23 @@
 public class Withdrawal extends Transaction
 {
     // test
-    private String withdType, fromAccount;
+    private String withdType, source;
     
     // Why this one don't have void eh?
-    public Withdrawal(String type, double value, String desc, String withdType, String fromAccount) {
+    public Withdrawal(String type, double value, String desc, String withdType, String source) {
         super(type, value, desc);
         this.withdType=withdType;
-        this.fromAccount=fromAccount;
+        this.source=source;
     }
     
     public void setWithdrawType(String set) { this.withdType=set; }
-    public void setFromAccount(String fromAccount) { this.fromAccount=fromAccount; }
+    public void setSource(String source) { this.source=source; }
     
     public String getWithdrawType() { return withdType; }
-    public String getFromAccount() { return fromAccount; }
+    public String getSource() { return source; }
     
     public String toString() {
         return (super.toString() + "| Deposit Type : " + withdType +
-            "| From Account : " + fromAccount);
+            "| From Account : " + source);
     }
 }
