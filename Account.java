@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Account
 {
     // Defining variable
@@ -29,6 +31,18 @@ public class Account
     // Generate ID
     public String generateID() {
         return ""; // complete this..
+    }
+    
+    public void pressEnterToContinue()
+    { 
+        System.out.println("Press Enter key to continue...");
+        try
+        {
+            Scanner scanner=new Scanner(System.in);
+            scanner.nextLine();
+        }  
+        catch(Exception e)
+        {}  
     }
     
     public String toString() {
