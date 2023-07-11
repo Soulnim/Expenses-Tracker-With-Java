@@ -85,7 +85,7 @@ public class ExpenseTracker
             }
             //close file
             br.close();
-        } // end try 
+        } // end try
         catch(EOFException eof) //to display a message if an error related to file occur
         {    System.out.println("Problem: "+eof.getMessage());}
         catch(FileNotFoundException e)
@@ -163,12 +163,18 @@ public class ExpenseTracker
                             System.out.println("+--------------------+");
                         }
                         int acc=inputNum.nextInt();
+                        System.out.println("\u000C");
+                        System.out.println("ADD DEPOSIT");
+                        System.out.println("Bank : "+account[acc-1].getName());
                         System.out.println("+--------------------+");
                         System.out.println("Enter value : ");
                         System.out.println("+--------------------+");
                         double enterValue=inputNum.nextDouble();
+                        System.out.println("\u000C");
+                        System.out.println("ADD DEPOSIT");
+                        System.out.println("Bank : "+account[acc-1].getName()+"\nValue : RM "+enterValue);
                         System.out.println("+--------------------+");
-                        System.out.println("Enter date : ");
+                        System.out.println("Date, ");
                         System.out.println("+--------------------+");
                         System.out.println("Enter Day : ");
                         String day=inputText.nextLine();
@@ -176,10 +182,16 @@ public class ExpenseTracker
                         String month=inputText.nextLine();
                         System.out.println("Enter Year : ");
                         String year=inputText.nextLine();
+                        System.out.println("\u000C");
+                        System.out.println("ADD DEPOSIT");
+                        System.out.println("Bank : "+account[acc-1].getName()+"\nValue : RM "+enterValue+"\nDate : "+day+"/"+month+"/"+year);
                         System.out.println("+--------------------+");
                         System.out.println("Enter description : ");
                         System.out.println("+--------------------+");
                         String desc=inputText.nextLine();
+                        System.out.println("\u000C");
+                        System.out.println("ADD DEPOSIT");
+                        System.out.println("Bank : "+account[acc-1].getName()+"\nValue : RM "+enterValue+"\nDate : "+day+"/"+month+"/"+year+"\nDescription : "+desc);
                         System.out.println("+--------------------+");
                         System.out.println("Enter deposit type : ");
                         for (int i=0;i<6;i++) {
@@ -187,6 +199,10 @@ public class ExpenseTracker
                         }
                         System.out.println("+--------------------+");
                         int typeChoice=inputNum.nextInt();
+                        System.out.println("+--------------------+");
+                        System.out.println("\u000C");
+                        System.out.println("ADD DEPOSIT");
+                        System.out.println("Bank : "+account[acc-1].getName()+"\nValue : RM "+enterValue+"\nDate : "+day+"/"+month+"/"+year+"\nDescription : "+desc+"\nType : "+depoTypeArr[typeChoice-1]);
                         System.out.println("+--------------------+");
                         String depoType=depoTypeArr[typeChoice-1];
                         transaction[totalTransaction]=new Transaction("Deposit", enterValue, desc, (day+"/"+month+"/"+year));
@@ -213,12 +229,18 @@ public class ExpenseTracker
                             System.out.println("+--------------------+");
                         }
                         int acc=inputNum.nextInt();
+                        System.out.println("\u000C");
+                        System.out.println("ADD WITHDRAWAL");
+                        System.out.println("Bank : "+account[acc-1].getName());
                         System.out.println("+--------------------+");
                         System.out.println("Enter value : ");
                         System.out.println("+--------------------+");
                         double enterValue=inputNum.nextDouble();
+                        System.out.println("\u000C");
+                        System.out.println("ADD WITHDRAWAL");
+                        System.out.println("Bank : "+account[acc-1].getName()+"\nValue : RM "+enterValue);
                         System.out.println("+--------------------+");
-                        System.out.println("Enter date : ");
+                        System.out.println("Date, ");
                         System.out.println("+--------------------+");
                         System.out.println("Enter Day : ");
                         String day=inputText.nextLine();
@@ -226,10 +248,16 @@ public class ExpenseTracker
                         String month=inputText.nextLine();
                         System.out.println("Enter Year : ");
                         String year=inputText.nextLine();
+                        System.out.println("\u000C");
+                        System.out.println("ADD WITHDRAWAL");
+                        System.out.println("Bank : "+account[acc-1].getName()+"\nValue : RM "+enterValue+"\nDate : "+day+"/"+month+"/"+year);
                         System.out.println("+--------------------+");
                         System.out.println("Enter description : ");
                         System.out.println("+--------------------+");
                         String desc=inputText.nextLine();
+                        System.out.println("\u000C");
+                        System.out.println("ADD WITHDRAWAL");
+                        System.out.println("Bank : "+account[acc-1].getName()+"\nValue : RM "+enterValue+"\nDate : "+day+"/"+month+"/"+year+"\nDescription : "+desc);
                         System.out.println("+--------------------+");
                         System.out.println("Enter withdrawal type : ");
                         for (int i=0;i<6;i++) {
@@ -237,6 +265,10 @@ public class ExpenseTracker
                         }
                         System.out.println("+--------------------+");
                         int typeChoice=inputNum.nextInt();
+                        System.out.println("+--------------------+");
+                        System.out.println("\u000C");
+                        System.out.println("ADD WITHDRAWAL");
+                        System.out.println("Bank : "+account[acc-1].getName()+"\nValue : RM "+enterValue+"\nDate : "+day+"/"+month+"/"+year+"\nDescription : "+desc+"\nType : "+withTypeArr[typeChoice-1]);
                         System.out.println("+--------------------+");
                         String withType=withTypeArr[typeChoice-1];
                         transaction[totalTransaction]=new Transaction("Withdrawal", enterValue, desc, (day+"/"+month+"/"+year));
@@ -667,6 +699,7 @@ public class ExpenseTracker
                         }
                         optionSet=0;
                     } else if(optionSet==3) {
+                        System.out.println("\u000C");
                         System.out.println("+--------------------+");
                         System.out.println("|PROGRAM INFORMATIONS|");
                         System.out.println("+--------------------+");
